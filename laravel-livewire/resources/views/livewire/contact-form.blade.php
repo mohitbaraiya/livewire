@@ -60,8 +60,17 @@
     </div>
     <div class="bg-white py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
       <div class="max-w-lg mx-auto lg:max-w-none">
-        <form action="/contact" method="POST" class="grid grid-cols-1 gap-y-6">
-          @csrf
+        @if(isset($data))
+            @foreach($data as $item)
+
+                 <h1>{{ $item }}</h1>
+
+            @endforeach
+        @endif 
+    <form action="contact" method="post" class="grid grid-cols-1 gap-y-6">
+
+      @csrf
+
           <div>
             <label for="full-name" class="sr-only">Full name</label>
             <input type="text" name="name" value="{{ old('name') }}" id="name" autocomplete="name" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md" placeholder="Full name">

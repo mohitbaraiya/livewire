@@ -21,7 +21,11 @@ Route::get('/', function () {
 });
 
 
-Route::post('/contact',function(RegistrationRequest $request){
+Route::post('/contact', function(RegistrationRequest $request){
        
-       $request->validate();
+     $request->validated();
+     $input = $request->except('_token');
+
+     return view('examples' ,['data'=>$input]); 
+
 });
