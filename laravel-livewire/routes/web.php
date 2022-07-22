@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Requests\RegistrationRequest;
+use App\Http\Livewire;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    return view('examples');
+});
+
+
+Route::post('/contact',function(RegistrationRequest $request){
+       
+       $request->validate();
 });
