@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Requests\RegistrationRequest;
-use App\Http\Livewire;
+use App\Http\Livewire\ContactForm;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +21,4 @@ Route::get('/', function () {
 });
 
 
-Route::post('/contact', function(RegistrationRequest $request){
-       
-     $request->validated();
-     $input = $request->except('_token');
-
-     return view('examples' ,['data'=>$input]); 
-
-});
+Route::get('/contact-',[ContactForm::class]);
