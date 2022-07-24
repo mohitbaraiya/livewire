@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Requests\RegistrationRequest;
-use App\Http\Livewire\ContactForm;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +15,13 @@ use App\Http\Livewire\ContactForm;
 |
 */
 
-Route::get('/', function () {
+Route::get('/',function(){
 
-    return view('examples');
+    return view('auth.login');
 });
 
 
-Route::get('/contact-',[ContactForm::class]);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
