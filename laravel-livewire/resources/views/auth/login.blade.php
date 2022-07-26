@@ -12,9 +12,9 @@
 
                         <div class="mb-5">
                             <label for="email-address" class="sr-only">{{ __('Email Address') }}</label>
-                            <input id="email" type="email" class=" appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email addressform-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <input id="email" type="email" class=" appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email addressform-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" autofocus>
                             @error('email')
-                                <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback text-red-500" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
@@ -22,9 +22,9 @@
 
                         <div >
                             <label for="password" class="sr-only">{{ __('Password') }}</label>
-                            <input id="password" type="password" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Enter password @error('password') is-invalid @enderror" form-control @error('password') is-invalid @enderror" name="password" plesj required autocomplete="current-password">
+                            <input id="password" type="password" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Enter password @error('password') is-invalid @enderror" form-control @error('password') is-invalid @enderror" name="password"  autocomplete="current-password">
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback text-red-500" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
